@@ -1,24 +1,34 @@
 import React, { Component } from 'react';
-import Header from './Header';
-import DocContent from './DocContent';
-import DocNav from './DocNav'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import MainContainer from './MainContainer'
 import './css/App.css';
 
 class App extends Component {
 
-    componentDidMount() {
-
-        fetch('/dev-server/yo')
-            .then((data) => data.json())
-            .then((json) => console.log(json));
-    }
-
     render() {
         return (
-            <div className='App'>
-                <Header className='Header' />
-                <DocContent className='DocContent' />
-                <DocNav className='DocNav'/>
+            <div>
+                <Router>
+
+                    <div>
+                        <nav>
+                            <ul>
+                                <li>
+                                    <Link to="/">Home</Link>
+                                </li>
+                                <li>
+                                    <Link to="/about/">About</Link>
+                                </li>
+                            </ul>
+                        </nav>
+
+                        <Route exact path="/"
+                            render={props => <MainContainer content={'This is the home page'} />}
+                        />
+                        <Route path="/about"
+                            render={props => <MainContainer content={'This is the about page'} />} />
+                    </div>
+                </Router>
             </div>
         )
     }

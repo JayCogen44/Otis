@@ -3,9 +3,10 @@ import React, { Component } from 'react';
 
 class DocContent extends Component {
 
-    render(){
-        return(
-            <div className='DocContent'>Doc Content is working.</div>
+
+    render() {
+        return (
+            <div className='DocContent'>{this.props.content}</div>
         )
     }
 };
