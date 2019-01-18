@@ -14,7 +14,7 @@ module.exports = {
         publicPath: '/build/',
         proxy: {
             '/dev-server': {
-                target: 'http://localhost:3000',
+                target: 'http://localhost:3300',
                 pathRewrite: { '^/dev-server': '' }
             }
         }
