@@ -18,7 +18,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className='App'>
                 <Header />
                 <DocContent content={this.props.content} />
                 <DocNav />
