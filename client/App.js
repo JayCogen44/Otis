@@ -17,6 +17,7 @@ class App extends Component {
         return (
             <div className='App'>
                 App is working.
+                We are going to update this site to have react router
                 <Header />
                 <DocContent />
                 <DocNav />
