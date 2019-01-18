@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import Header from './Header';
+import DocContent from './DocContent';
+import DocNav from './DocNav'
+import './css/App.css';
 
 class App extends Component {
 
@@ -11,7 +15,12 @@ class App extends Component {
 
     render() {
         return (
-            <div>Hey guys this is working</div>
+            <div className='App'>
+                App is working.
+                <Header />
+                <DocContent />
+                <DocNav />
+            </div>
         )
     }
 }
