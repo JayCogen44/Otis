@@ -16,11 +16,9 @@ class App extends Component {
     render() {
         return (
             <div className='App'>
-                App is working.
-                We are going to update this site to have react router
-                <Header />
-                <DocContent />
-                <DocNav />
+                <Header className='Header' />
+                <DocContent className='DocContent' />
+                <DocNav className='DocNav'/>
             </div>
         )
     }

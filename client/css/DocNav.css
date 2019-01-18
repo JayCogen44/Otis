@@ -1,4 +1,9 @@
 .DocNav {
+    display: grid;
+    grid-template-areas: 
+        'a a a'
+        'b b b'
+        'c c c';
     border-style: solid;
     color: red;
 }
