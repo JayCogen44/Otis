@@ -34,10 +34,12 @@ class MainContainer extends Component {
 
 const mapStateToProps = ({ reducer }) => ({
     greeting: reducer.data,
+    // visibleNav: reducer.isPressed,
 });
 
 const mapDispatchToProps = dispatch => ({
-    showGreeting: () => dispatch(actions.showGreeting('Now we know redux'))
+    showGreeting: () => dispatch(actions.showGreeting('Now we know redux')),
+    // toggleHeader: () => dispatch(actions.toggleHeader())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);

@@ -1,1 +1,2 @@
 export const SHOW_GREETING = 'SHOW_GREETING';
+// export const TOGGLE_HEADER = 'TOGGLE_HEADER';
