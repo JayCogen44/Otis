@@ -7,8 +7,13 @@ class DocContent extends Component {
 
     render() {
         let changedContent;
+<<<<<<< HEAD
         if (this.props.docData) {
             changedContent = <td dangerouslySetInnerHTML={{ __html: this.props.docData.content }} />
+=======
+        if (this.props.docData[0]) {
+            changedContent = <td dangerouslySetInnerHTML={{ __html: this.props.docData[0].content }} />
+>>>>>>> c46affd63c7ecb24ba35557a3207e68c36704a37
         } else {
             changedContent = (
                 <div>
@@ -66,6 +71,10 @@ class DocContent extends Component {
                     <p>This documentation section is useful when you want to learn more details about a particular React API. For example, React.Component API reference can provide you with details on how setState() works, and what different lifecycle methods are useful for.</p>
                     <h3>Glossary and FAQ</h3>
                     <p>The glossary contains an overview of the most common terms you’ll see in the React documentation. There is also a FAQ section dedicated to short questions and answers about common topics, including making AJAX requests, component state, and file structure.</p></div>)
+<<<<<<< HEAD
+=======
+
+>>>>>>> c46affd63c7ecb24ba35557a3207e68c36704a37
         }
         return (
             <div className='DocContent'>
