@@ -9,12 +9,13 @@ import './../css/App.css';
 class MainContainer extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            contentId: 0
+        }
     }
 
-    componentDidMount() {
-        fetch('/dev-server/yo')
-            .then((data) => data.json())
-            .then((json) => console.log(json));
+    updateContent = (e) => {
+        this.setState({ contentId: e.target.id });
     }
 
     render() {
@@ -22,8 +23,8 @@ class MainContainer extends Component {
             <div className='App'>
                 <Header />
                 <DocContent
-                    docData={this.props.docData} />
-                <DocNav />
+                    docData={this.props.docData[this.state.contentId]} />
+                <DocNav updateContent={this.updateContent} docData={this.props.docData} />
             </div>
         )
     }

@@ -12,7 +12,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-    docData: ''
+    docData: []
 };
 
 const reducer = (state = initialState, action) => {
