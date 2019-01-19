@@ -21,7 +21,7 @@ class MainContainer extends Component {
     render() {
         return (
             <div className='App'>
-                <Header toggleNav={this.props.toggleNav}/>
+                <Header />
                 <DocContent showGreeting={this.props.showGreeting} greeting={this.props.greeting} content={this.props.content} />
                 <DocNav />
             </div>

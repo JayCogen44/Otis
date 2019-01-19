@@ -1,3 +1,4 @@
+/* GLOBAL */
 body {
     margin: 0;
 }
@@ -6,13 +7,137 @@ body {
     height: 100%;
 }
 
+/* GLOBAL NAV */
+
+nav {
+	position: fixed;
+	background: #eee;
+	height: 100%;
+    width: 250px;
+    padding: 15px 0;
+	transition: all .2s ease-in-out;
+}
+
 .show {
-    display: block;
+    left: 0;
 }
 
 .hide {
-    display: none;
+    left: -250px;
 }
+
+span.nav {
+	display: block;
+	width: 30px;
+	height: 12px;
+	padding-top: 10px;
+	padding-left: 20px;
+	position: absolute;
+	top: 13px;
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+.show span.nav {
+	left: 185px;
+}
+
+.hide span.nav {
+    left: 250px;
+}
+
+.nav span {
+	width: 30px;
+	height: 2px;
+	background: #3c3c3c;
+	display: block;
+	position: absolute;
+	opacity: 1;
+    transition: all .75s ease-in-out;
+}
+
+.show .nav span {
+	background: #3c3c3c;
+}
+
+.hide .nav span {
+	background: #c3c3c3;
+}
+
+.hide .nav .top {
+	top: 0;
+}
+
+.hide .nav .mid {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.hide .nav .bot {
+	top: 20px;
+}
+
+.show .nav .top {
+	top: 10px;
+	transform: rotate(45deg);
+}
+
+.show .nav .mid {
+	opacity: 0;
+}
+
+.show .nav .bot {
+	top: 10px;
+	transform: rotate(-45deg);
+}
+
+span.nav-title {
+	font-size: 24px;
+	display: block;
+	border-bottom: 2px solid #3b8ef9;
+	padding: 0 30px 10px;
+	line-height: 24px;
+}
+
+nav ul {
+	list-style: none;
+    padding: 0 70px 0 30px;
+}
+
+nav ul li {
+	padding: 0 0 20px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #3c3c3c;
+	position: relative;
+	display: block;
+}
+
+nav ul li a .link_underline {
+	display: block;
+	background: #3b8ef9;
+	height: 2px;
+	position: absolute;
+	bottom: -5px;
+	width: 0%;
+	opacity: 0;
+	transition: all .2s ease-in-out;
+}
+
+nav ul li a:hover .link_underline {
+    width: 100%;
+    opacity: 1;
+}
+
+
+
+
+
+
+/* APP */
 
 .App {
     display: grid;
@@ -24,17 +149,24 @@ body {
     height: 100%;
 }
 
+/* HEADER */
+
 .Header {
     grid-area: a;
     background-color: black;
     color: whitesmoke;
 }
 
+/* DOCUMENT CONTENT */
+
 .DocContent {
     grid-area: c;
+    padding: 20px;
 }
 
+
 /* DOC NAV STYLING */
+
 .DocNav {
     grid-area: b;
     border-style: solid;
