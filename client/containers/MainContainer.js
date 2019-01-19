@@ -14,25 +14,17 @@ class MainContainer extends Component {
         }
     }
 
-<<<<<<< HEAD
     updateContent = (e) => {
         this.setState({ contentId: e.target.id });
     }
 
-=======
->>>>>>> c46affd63c7ecb24ba35557a3207e68c36704a37
     render() {
         return (
             <div className='App'>
                 <Header />
                 <DocContent
-<<<<<<< HEAD
                     docData={this.props.docData[this.state.contentId]} />
                 <DocNav updateContent={this.updateContent} docData={this.props.docData} />
-=======
-                    docData={this.props.docData} />
-                <DocNav docData={this.props.docData} />
->>>>>>> c46affd63c7ecb24ba35557a3207e68c36704a37
             </div>
         )
     }
