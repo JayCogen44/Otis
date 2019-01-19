@@ -205,7 +205,8 @@ nav ul li:hover .link_underline {
   .dropdown .content p {
 	font-size: 14px;
 	padding-left: 10px;
-	color: #444;
+    color: #444;
+    cursor: pointer;
 }
   
   .active.dropdown {

@@ -10,6 +10,7 @@ class DocNav extends Component {
     }
 
     render() {
+        console.log(this.props.docData);
         const nav = [];
         this.props.docData.forEach((e, i) => {
             nav.push(
@@ -19,7 +20,7 @@ class DocNav extends Component {
                 >
                     <span className='collapsible'>{e.category}</span>
                     <div className="content">
-                        <p>{e.title}</p>
+                        <p id={i} onClick={this.props.updateContent}>{e.title}</p>
                     </div>
                 </div>
             )
@@ -27,9 +28,7 @@ class DocNav extends Component {
 
         return (
             <div className='DocNav'>
-
                 {nav}
-
             </div>
         )
     }

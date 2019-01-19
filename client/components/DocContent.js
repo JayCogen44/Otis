@@ -7,8 +7,8 @@ class DocContent extends Component {
 
     render() {
         let changedContent;
-        if (this.props.docData[0]) {
-            changedContent = <td dangerouslySetInnerHTML={{ __html: this.props.docData[0].content }} />
+        if (this.props.docData) {
+            changedContent = <td dangerouslySetInnerHTML={{ __html: this.props.docData.content }} />
         } else {
             changedContent = (
                 <div>
