@@ -10,10 +10,6 @@ class DocNav extends Component {
     }
 
     render() {
-<<<<<<< HEAD
-        console.log(this.props.docData);
-=======
->>>>>>> c46affd63c7ecb24ba35557a3207e68c36704a37
         const nav = [];
         this.props.docData.forEach((e, i) => {
             nav.push(
@@ -23,23 +19,11 @@ class DocNav extends Component {
                 >
                     <span className='collapsible'>{e.category}</span>
                     <div className="content">
-<<<<<<< HEAD
                         <p id={i} onClick={this.props.updateContent}>{e.title}</p>
-=======
-                        <p>{e.title}</p>
->>>>>>> c46affd63c7ecb24ba35557a3207e68c36704a37
                     </div>
                 </div>
             )
         });
-<<<<<<< HEAD
-=======
-
-        return (
-            <div className='DocNav'>
-
-                {nav}
->>>>>>> c46affd63c7ecb24ba35557a3207e68c36704a37
 
         return (
             <div className='DocNav'>
