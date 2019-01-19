@@ -13,8 +13,9 @@ nav {
 	position: fixed;
 	background: #eee;
 	height: 100%;
-	padding: 15px 20px;
-	width: 180px;
+    width: 250px;
+    padding: 15px 0;
+	transition: all .2s ease-in-out;
 }
 
 .show {
@@ -22,7 +23,7 @@ nav {
 }
 
 .hide {
-    left: -180px;
+    left: -250px;
 }
 
 span.nav {
@@ -31,18 +32,18 @@ span.nav {
 	height: 12px;
 	padding-top: 10px;
 	padding-left: 20px;
-    position: absolute;
-    top: 15px;
-    left: 155px;
+	position: absolute;
+	top: 13px;
 	cursor: pointer;
+	transition: all .2s ease-in-out;
 }
 
 .show span.nav {
-    left: 155px;
+	left: 185px;
 }
 
 .hide span.nav {
-    left: 20px;
+    left: 250px;
 }
 
 .nav span {
@@ -52,39 +53,83 @@ span.nav {
 	display: block;
 	position: absolute;
 	opacity: 1;
-	transition: all .2s ease-in-out;
+    transition: all .75s ease-in-out;
 }
 
-.show .nav .top {
+.show .nav span {
+	background: #3c3c3c;
+}
+
+.hide .nav span {
+	background: #c3c3c3;
+}
+
+.hide .nav .top {
 	top: 0;
 }
 
-.show .nav .mid {
+.hide .nav .mid {
 	top: 50%;
 	transform: translateY(-50%);
 }
 
-.show .nav .bot {
+.hide .nav .bot {
 	top: 20px;
 }
 
-.hide .nav .top {
-	top: 15px;
+.show .nav .top {
+	top: 10px;
 	transform: rotate(45deg);
 }
 
-.hide .nav .mid {
+.show .nav .mid {
 	opacity: 0;
 }
 
-.hide .nav .bot {
-	top: 15px;
+.show .nav .bot {
+	top: 10px;
 	transform: rotate(-45deg);
 }
 
+span.nav-title {
+	font-size: 24px;
+	display: block;
+	border-bottom: 2px solid #3b8ef9;
+	padding: 0 30px 10px;
+	line-height: 24px;
+}
+
 nav ul {
-	margin-top: 50px;
 	list-style: none;
+    padding: 0 70px 0 30px;
+}
+
+nav ul li {
+	padding: 0 0 20px;
+}
+
+nav ul li a {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #3c3c3c;
+	position: relative;
+	display: block;
+}
+
+nav ul li a .link_underline {
+	display: block;
+	background: #3b8ef9;
+	height: 2px;
+	position: absolute;
+	bottom: -5px;
+	width: 0%;
+	opacity: 0;
+	transition: all .2s ease-in-out;
+}
+
+nav ul li a:hover .link_underline {
+    width: 100%;
+    opacity: 1;
 }
 
 
@@ -116,6 +161,7 @@ nav ul {
 
 .DocContent {
     grid-area: c;
+    padding: 20px;
 }
 
 /* DOCUMENT NAV */
