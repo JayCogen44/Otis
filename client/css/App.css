@@ -1,8 +1,230 @@
+/* GLOBAL */
 body {
     margin: 0;
 }
 
+#root {
+    height: 100%;
+}
+
+/* GLOBAL NAV */
+
+nav {
+	position: fixed;
+	background: #eee;
+	height: 100%;
+    width: 250px;
+    padding: 15px 0;
+	transition: all .2s ease-in-out;
+    z-index: 9;
+}
+
+.show {
+    left: 0;
+}
+
+.hide {
+    left: -250px;
+}
+
+span.nav {
+	display: block;
+	width: 30px;
+	height: 12px;
+	padding-top: 10px;
+	padding-left: 20px;
+	position: absolute;
+	top: 13px;
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+.show span.nav {
+	left: 185px;
+}
+
+.hide span.nav {
+    left: 250px;
+}
+
+.nav span {
+	width: 30px;
+	height: 2px;
+	background: #3c3c3c;
+	display: block;
+	position: absolute;
+	opacity: 1;
+    transition: all .75s ease-in-out;
+}
+
+.show .nav span {
+	background: #3c3c3c;
+}
+
+.hide .nav span {
+	background: #c3c3c3;
+}
+
+.hide .nav .top {
+	top: 0;
+}
+
+.hide .nav .mid {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.hide .nav .bot {
+	top: 20px;
+}
+
+.show .nav .top {
+	top: 10px;
+	transform: rotate(45deg);
+}
+
+.show .nav .mid {
+	opacity: 0;
+}
+
+.show .nav .bot {
+	top: 10px;
+	transform: rotate(-45deg);
+}
+
+span.nav-title {
+	font-size: 24px;
+	display: block;
+	border-bottom: 2px solid #3b8ef9;
+	padding: 0 30px 10px;
+	line-height: 24px;
+}
+
+nav ul {
+	list-style: none;
+    padding: 0 70px 0 30px;
+}
+
+nav ul li {
+	text-decoration: none;
+	text-transform: uppercase;
+	color: #3c3c3c;
+	position: relative;
+    display: block;
+    cursor: pointer;
+}
+
+nav ul li .link_underline {
+	display: block;
+	background: #3b8ef9;
+	height: 2px;
+	position: absolute;
+	bottom: -5px;
+	width: 0%;
+	opacity: 0;
+	transition: all .2s ease-in-out;
+}
+
+nav ul li:hover .link_underline {
+    width: 100%;
+    opacity: 1;
+}
+
+
+
+
+
+
+/* APP */
+
 .App {
     display: grid;
-    width: 100%;
+    grid-auto-rows: 50px 1fr;
+    grid-auto-columns: 1fr 1fr 400px;
+    grid-template-areas: 
+        'a a a'
+        'c c b';
+    height: 100%;
 }
+
+/* HEADER */
+
+.Header {
+    grid-area: a;
+    background-color: black;
+    color: whitesmoke;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+}
+
+/* DOCUMENT CONTENT */
+
+.DocContent {
+    grid-area: c;
+    padding: 20px;
+}
+
+/* DOC NAV STYLING */
+
+.DocNav {
+    grid-area: b;
+    border-style: solid;
+    border-width: 1px;
+    border-color: lightgray;
+    background-color: whitesmoke;
+}
+
+.collapsible {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: whitesmoke;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    color: black;
+  }
+
+  /* Style the collapsible content. Note: hidden by default */
+  .dropdown .content {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 18px;
+    background-color: whitesmoke;
+  }
+
+  .dropdown .content p {
+	font-size: 14px;
+	padding-left: 10px;
+	color: #444;
+}
+  
+  .active.dropdown {
+      max-height: 500px;
+      transition:  all 0.1s ease-out;
+  }
+
+  .dropdown {
+      max-height: 40px;
+      overflow: hidden;
+      transition: all 0.1s ease-out;
+  }
+
+  /* ADDS ARROWS NEXT TO COLLAPSIBLE TEXT */
+  .collapsible:after {
+    content: '\2304' ; /* Unicode character for downward facing arrow */
+    font-size: 35px;
+    color: grey;
+    /* float: right; */
+    /* margin-left: 5px; */
+  }
+  

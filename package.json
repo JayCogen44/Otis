@@ -10,9 +10,10 @@
     "author": "Team Goblin Shark",
     "license": "ISC",
     "dependencies": {
-        "css-loader": "^2.1.0",
+        "css-loader": "^0.28.11",
         "express": "^4.12.3",
         "node-sass": "^4.0.0",
+        "pg": "^7.8.0",
         "pg-promise": "^8.5.5",
         "react": "^16.2.0",
         "react-dom": "^16.3.1",
