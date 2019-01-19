@@ -42,17 +42,10 @@ class App extends Component {
                         </span>
                         <span className='nav-title'>DOCS</span>
                         <ul>
-                            <li>
-                                <button id='react' onClick={this.handleLinkClick}
-                                >React<span className='link_underline' /></button>
-                            </li>
-                            <li>
-                                <button id='postres' onClick={this.handleLinkClick}
-                                >Postgres<span className='link_underline' /></button>
+                            <li id='react' onClick={this.handleLinkClick}>React<span className='link_underline' />
                             </li>
                         </ul>
                     </nav>
-
                     <MainContainer docData={this.props.docData} />
                 </div>
             </div >

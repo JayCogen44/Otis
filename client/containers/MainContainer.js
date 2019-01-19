@@ -11,19 +11,13 @@ class MainContainer extends Component {
         super(props);
     }
 
-    componentDidMount() {
-        fetch('/dev-server/yo')
-            .then((data) => data.json())
-            .then((json) => console.log(json));
-    }
-
     render() {
         return (
             <div className='App'>
                 <Header />
                 <DocContent
                     docData={this.props.docData} />
-                <DocNav />
+                <DocNav docData={this.props.docData} />
             </div>
         )
     }
