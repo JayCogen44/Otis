@@ -24,7 +24,7 @@ const reducer = (state = initialState, action) => {
             console.log("Is action payload an array? ", Array.isArray(action.payload))
             return {
                 ...state,
-                docData: action.payload
+                docData: action.payload[0].content
             }
 
         default: return state;

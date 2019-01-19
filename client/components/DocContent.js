@@ -66,7 +66,6 @@ class DocContent extends Component {
                     <p>This documentation section is useful when you want to learn more details about a particular React API. For example, React.Component API reference can provide you with details on how setState() works, and what different lifecycle methods are useful for.</p>
                     <h3>Glossary and FAQ</h3>
                     <p>The glossary contains an overview of the most common terms you’ll see in the React documentation. There is also a FAQ section dedicated to short questions and answers about common topics, including making AJAX requests, component state, and file structure.</p></div>)
-
         }
         return (
             <div className='DocContent'>
