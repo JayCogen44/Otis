@@ -106,18 +106,15 @@ nav ul {
 }
 
 nav ul li {
-	padding: 0 0 20px;
-}
-
-nav ul li a {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #3c3c3c;
 	position: relative;
-	display: block;
+    display: block;
+    cursor: pointer;
 }
 
-nav ul li a .link_underline {
+nav ul li .link_underline {
 	display: block;
 	background: #3b8ef9;
 	height: 2px;
@@ -128,7 +125,7 @@ nav ul li a .link_underline {
 	transition: all .2s ease-in-out;
 }
 
-nav ul li a:hover .link_underline {
+nav ul li:hover .link_underline {
     width: 100%;
     opacity: 1;
 }
@@ -183,7 +180,7 @@ nav ul li a:hover .link_underline {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     background-color: whitesmoke;
-    color: grey;
+    color: #444;
     cursor: pointer;
     padding: 18px;
     width: 100%;
@@ -197,15 +194,29 @@ nav ul li a:hover .link_underline {
   .active, .collapsible:hover {
     color: black;
   }
-  
+
   /* Style the collapsible content. Note: hidden by default */
-  .content {
+  .dropdown .content {
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 18px;
     background-color: whitesmoke;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.1s ease-out;
+  }
+
+  .dropdown .content p {
+	font-size: 14px;
+	padding-left: 10px;
+	color: #444;
+}
+  
+  .active.dropdown {
+      max-height: 500px;
+      transition:  all 0.1s ease-out;
+  }
+
+  .dropdown {
+      max-height: 40px;
+      overflow: hidden;
+      transition: all 0.1s ease-out;
   }
 
   /* ADDS ARROWS NEXT TO COLLAPSIBLE TEXT */
@@ -215,11 +226,5 @@ nav ul li a:hover .link_underline {
     color: grey;
     /* float: right; */
     /* margin-left: 5px; */
-  }
-  
-  .active:after {
-    content: "\2303"; /* Unicode character for upward facing arrow */
-    font-size: 18px;
-    color: grey;
   }
   
