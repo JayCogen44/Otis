@@ -38,25 +38,35 @@ class App extends Component {
                             <span className='nav-title'>DOCS</span>
                             <ul>
                                 <li>
-                                    <Link to="/">React<span className='link_underline' /></Link>
+                                    <Link to="/react/" onClick={this.toggleNav}>React<span className='link_underline' /></Link>
                                 </li>
                                 <li>
-                                    <Link to="/about/">Mongo<span className='link_underline' /></Link>
+                                    <Link to="/mongo/" onClick={this.toggleNav}>Mongo<span className='link_underline' /></Link>
                                 </li>
                                 <li>
-                                    <Link to="/">Postgres<span className='link_underline' /></Link>
+                                    <Link to="/postgres/" onClick={this.toggleNav}>Postgres<span className='link_underline' /></Link>
                                 </li>
                                 <li>
-                                    <Link to="/about/">Mongoose<span className='link_underline' /></Link>
+                                    <Link to="/mongoose/" onClick={this.toggleNav}>Mongoose<span className='link_underline' /></Link>
                                 </li>
                             </ul>
                         </nav>
 
                         <Route exact path="/"
-                            render={props => <MainContainer content={'This is the home page'} />}
+                            render={props => <MainContainer content={'This is the HOME page'} />}
                         />
-                        <Route path="/about"
-                            render={props => <MainContainer toggleNav={this.toggleNav} content={'This is the about page'} />} />
+                        <Route path="/react"
+                            render={props => <MainContainer content={'This is the REACT page'} />}
+                        />
+                        <Route path="/mongo"
+                            render={props => <MainContainer content={'This is the MONGO page'} />}
+                        />
+                        <Route path="/postgres"
+                            render={props => <MainContainer content={'This is the POSTGRES page'} />}
+                        />
+                        <Route path="/mongoose"
+                            render={props => <MainContainer content={'This is the MONGOOSE page'} />}
+                        />
                     </div>
                 </Router>
             </div >
