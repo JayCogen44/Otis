@@ -10,7 +10,6 @@ class DocNav extends Component {
     }
 
     render() {
-        console.log(this.props.docData);
         const nav = [];
         this.props.docData.forEach((e, i) => {
             nav.push(

@@ -9,10 +9,6 @@ const bodyParser = require("body-parser");
 
 app.use(bodyParser.json());
 
-app.get("/yo", function(req, res) {
-  res.json("Holy shit this works");
-});
-
 // // route to grab documents
 // app.get("/docs", eventCtrl.getDocs, eventCtrl.getSections, (req, res) => {
 //   // console.log(res.locals.data, res.locals.sections, res.locals.articles);
@@ -48,6 +44,6 @@ app.post("sections", eventCtrl.postSection, (req, res) => {
 // route to post articles
 // route to edit articles
 
-server.listen(3300, function() {
+server.listen(3300, function () {
   console.log("listening on port 3300");
 }); //listens on port 3300 -> http://localhost:3300/
