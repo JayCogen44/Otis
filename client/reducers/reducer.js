@@ -12,25 +12,17 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-    data: 'Hey dudes',
-    isPressed: false,
+    docData: ''
 };
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-
-        case types.SHOW_GREETING:
+        case types.GET_DOC:
+            console.log(action.payload);
             return {
                 ...state,
-                data: action.payload
-            };
-        
-        // case types.TOGGLE_HEADER:
-        //     const isPressed = state.isPressed === false ? true : false;
-        //     return {
-        //         ...state,
-        //         isPressed,
-        //     }
+                docData: action.payload
+            }
 
         default: return state;
     }

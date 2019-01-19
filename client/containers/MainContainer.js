@@ -12,7 +12,6 @@ class MainContainer extends Component {
     }
 
     componentDidMount() {
-
         fetch('/dev-server/yo')
             .then((data) => data.json())
             .then((json) => console.log(json));
@@ -23,9 +22,7 @@ class MainContainer extends Component {
             <div className='App'>
                 <Header />
                 <DocContent
-                    showGreeting={this.props.showGreeting}
-                    greeting={this.props.greeting}
-                    content={this.props.content} />
+                    docData={this.props.docData} />
                 <DocNav />
             </div>
         )
@@ -33,13 +30,10 @@ class MainContainer extends Component {
 }
 
 const mapStateToProps = ({ reducer }) => ({
-    greeting: reducer.data,
-    // visibleNav: reducer.isPressed,
+    docData: reducer.docData
 });
 
 const mapDispatchToProps = dispatch => ({
-    showGreeting: () => dispatch(actions.showGreeting('Now we know redux')),
-    // toggleHeader: () => dispatch(actions.toggleHeader())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);

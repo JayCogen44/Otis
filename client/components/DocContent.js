@@ -8,8 +8,7 @@ class DocContent extends Component {
     render() {
         return (
             <div className='DocContent'>
-                <div>{this.props.greeting}, {this.props.content}</div>
-                <button onClick={this.props.showGreeting}>Change Greeting</button>
+                <div>something</div>
             </div>
         )
     }
