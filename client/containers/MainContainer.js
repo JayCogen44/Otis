@@ -22,7 +22,10 @@ class MainContainer extends Component {
         return (
             <div className='App'>
                 <Header />
-                <DocContent showGreeting={this.props.showGreeting} greeting={this.props.greeting} content={this.props.content} />
+                <DocContent
+                    showGreeting={this.props.showGreeting}
+                    greeting={this.props.greeting}
+                    content={this.props.content} />
                 <DocNav />
             </div>
         )
