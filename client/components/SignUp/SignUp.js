@@ -7,8 +7,8 @@ class SignUp extends Component {
   }
 
   handleSubmit(e) {
+    this.props.updateLogin()
     e.preventDefault();
-
     fetch("/dev-server/signup", {
       method: "POST",
       headers: {
@@ -21,13 +21,7 @@ class SignUp extends Component {
         password: e.target.elements.password.value
       })
     })
-      .then(response => {
-        e.target.elements.reset();
-        response.json();
-      })
-      .then(function(body) {
-        console.log(body);
-      })
+      .then(() => this.props.updateLogin())
       .catch(err => {
         console.log(err);
       });
