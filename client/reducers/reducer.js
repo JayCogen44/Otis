@@ -13,6 +13,7 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
     data: 'Hey dudes',
+    isPressed: false,
 };
 
 const reducer = (state = initialState, action) => {
@@ -23,6 +24,13 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 data: action.payload
             };
+        
+        // case types.TOGGLE_HEADER:
+        //     const isPressed = state.isPressed === false ? true : false;
+        //     return {
+        //         ...state,
+        //         isPressed,
+        //     }
 
         default: return state;
     }

@@ -15,3 +15,7 @@ export const showGreeting = data => ({
     type: types.SHOW_GREETING,
     payload: data
 })
+
+// export const toggleHeader = () => ({
+//     type: types.TOGGLE_HEADER,
+// })
