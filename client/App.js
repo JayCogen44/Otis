@@ -35,12 +35,19 @@ class App extends Component {
                                 <span className='mid'></span>
                                 <span className='bot'></span>
                             </span>
+                            <span className='nav-title'>DOCS</span>
                             <ul>
                                 <li>
-                                    <Link to="/">Home</Link>
+                                    <Link to="/">React<span className='link_underline' /></Link>
                                 </li>
                                 <li>
-                                    <Link to="/about/">About</Link>
+                                    <Link to="/about/">Mongo<span className='link_underline' /></Link>
+                                </li>
+                                <li>
+                                    <Link to="/">Postgres<span className='link_underline' /></Link>
+                                </li>
+                                <li>
+                                    <Link to="/about/">Mongoose<span className='link_underline' /></Link>
                                 </li>
                             </ul>
                         </nav>
