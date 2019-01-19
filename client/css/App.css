@@ -164,7 +164,8 @@ nav ul li a:hover .link_underline {
     padding: 20px;
 }
 
-/* DOCUMENT NAV */
+
+/* DOC NAV STYLING */
 
 .DocNav {
     grid-area: b;
@@ -173,3 +174,49 @@ nav ul li a:hover .link_underline {
     border-color: lightgray;
     background-color: whitesmoke;
 }
+
+.collapsible {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background-color: whitesmoke;
+    color: grey;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    display: fixed;
+  }
+  
+  /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  .active, .collapsible:hover {
+    color: black;
+  }
+  
+  /* Style the collapsible content. Note: hidden by default */
+  .content {
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0 18px;
+    background-color: whitesmoke;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.1s ease-out;
+  }
+
+  /* ADDS ARROWS NEXT TO COLLAPSIBLE TEXT */
+  .collapsible:after {
+    content: '\2304' ; /* Unicode character for downward facing arrow */
+    font-size: 35px;
+    color: grey;
+    /* float: right; */
+    /* margin-left: 5px; */
+  }
+  
+  .active:after {
+    content: "\2303"; /* Unicode character for upward facing arrow */
+    font-size: 18px;
+    color: grey;
+  }
+  
