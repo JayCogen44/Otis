@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 // import './css/DocContent.css';
 
 class DocContent extends Component {
-
+    constructor(props) {
+        super(props);
+    }
 
     render() {
         return (
-            <div className='DocContent'>{this.props.content}</div>
+            <div className='DocContent'>
+                <div>{this.props.greeting}, {this.props.content}</div>
+                <button onClick={this.props.showGreeting}>Change Greeting</button>
+            </div>
         )
     }
 };

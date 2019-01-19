@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Header from './Header';
 import DocContent from './DocContent';
 import DocNav from './DocNav';
+import * as actions from './actions/actions';
 import './css/App.css';
 
-class App extends Component {
+class MainContainer extends Component {
     constructor(props) {
         super(props);
     }
@@ -20,12 +22,20 @@ class App extends Component {
         return (
             <div className='App'>
                 <Header />
-                <DocContent content={this.props.content} />
+                <DocContent showGreeting={this.props.showGreeting} greeting={this.props.greeting} content={this.props.content} />
                 <DocNav />
             </div>
         )
     }
 }
 
-export default App;
+const mapStateToProps = ({ reducer }) => ({
+    greeting: reducer.data,
+});
+
+const mapDispatchToProps = dispatch => ({
+    showGreeting: () => dispatch(actions.showGreeting('Now we know redux'))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
 
