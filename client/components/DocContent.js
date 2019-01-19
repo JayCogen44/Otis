@@ -33,8 +33,8 @@ class DocContent extends Component {
                 <h2>Learn React</h2>
                 <p>People come to React from different backgrounds and with different learning styles. Whether you prefer a more theoretical or a practical approach, we hope you’ll find this section helpful.</p>
                 <ul>
-                <li>If you prefer to <strong>learn by doing</strong>, start with our practical tutorial.</li>
-                <li>If you prefer to <strong>learn concepts step by step</strong>, start with our guide to main concepts.</li>
+                    <li>If you prefer to <strong>learn by doing</strong>, start with our practical tutorial.</li>
+                    <li>If you prefer to <strong>learn concepts step by step</strong>, start with our guide to main concepts.</li>
                 </ul>
                 <p>Like any unfamiliar technology, React does have a learning curve. With practice and some patience, you <em>will</em> get the hang of it.</p>
                 <h3>First Examples</h3>
@@ -47,8 +47,8 @@ class DocContent extends Component {
                 <p>The React documentation assumes some familiarity with programming in the JavaScript language. You don’t have to be an expert, but it’s harder to learn both React and JavaScript at the same time.</p>
                 <p>We recommend going through <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/A_re-introduction_to_JavaScript">this JavaScript overview</a> to check your knowledge level. It will take you between 30 minutes and an hour but you will feel more confident learning React.</p>
                 <blockquote>
-                <p><strong>Tip:</strong></p>
-                <p>Whenever you get confused by something in JavaScript, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="blank">MDN</a> and <a href="http://javascript.info/" target="blank">javascript.info</a> are great websites to check. There are also <a href="/community/support.html" target="blank">community support forums</a> where you can ask for help.</p>
+                    <p><strong>Tip:</strong></p>
+                    <p>Whenever you get confused by something in JavaScript, <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="blank">MDN</a> and <a href="http://javascript.info/" target="blank">javascript.info</a> are great websites to check. There are also <a href="/community/support.html" target="blank">community support forums</a> where you can ask for help.</p>
                 </blockquote>
                 <h3>Practical Tutorial</h3>
                 <p>If you prefer to <strong>learn by doing,</strong> check out our practical tutorial. In this tutorial, we build a tic-tac-toe game in React. You might be tempted to skip it because you’re not building games — but give it a chance. The techniques you’ll learn in the tutorial are fundamental to building <em>any</em> React apps, and mastering it will give you a much deeper understanding.</p>

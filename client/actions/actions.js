@@ -11,11 +11,13 @@
 
 import * as types from '../constants/actionTypes';
 
-export const showGreeting = data => ({
-    type: types.SHOW_GREETING,
-    payload: data
-})
-
-// export const toggleHeader = () => ({
-//     type: types.TOGGLE_HEADER,
-// })
+export const getDoc = id => (dispatch) => {
+    fetch(`/dev-server/doc?${id}`)
+        .then(res => res.json())
+        .then(jsonData => {
+            dispatch({
+                type: types.GET_DOC,
+                payload: jsonData,
+            });
+        });
+}

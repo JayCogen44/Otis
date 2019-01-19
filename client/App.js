@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { connect } from 'react-redux';
+import * as actions from './actions/actions';
 import MainContainer from './containers/MainContainer'
 import './css/App.css';
 
@@ -24,55 +25,49 @@ class App extends Component {
         }
     }
 
+    handleLinkClick = (e) => {
+        this.props.getDoc(e);
+        this.toggleNav();
+    }
+
     render() {
         return (
             <div>
-                <Router>
-                    <div>
-                        <nav className={`main-nav  ${this.state.showNav === false ? "hide" : "show"}`}>
-                            <span className='nav' onClick={this.toggleNav}>
-                                <span className='top'></span>
-                                <span className='mid'></span>
-                                <span className='bot'></span>
-                            </span>
-                            <span className='nav-title'>DOCS</span>
-                            <ul>
-                                <li>
-                                    <Link to="/react/" onClick={this.toggleNav}>React<span className='link_underline' /></Link>
-                                </li>
-                                <li>
-                                    <Link to="/mongo/" onClick={this.toggleNav}>Mongo<span className='link_underline' /></Link>
-                                </li>
-                                <li>
-                                    <Link to="/postgres/" onClick={this.toggleNav}>Postgres<span className='link_underline' /></Link>
-                                </li>
-                                <li>
-                                    <Link to="/mongoose/" onClick={this.toggleNav}>Mongoose<span className='link_underline' /></Link>
-                                </li>
-                            </ul>
-                        </nav>
+                <div>
+                    <nav className={`main-nav  ${this.state.showNav === false ? "hide" : "show"}`}>
+                        <span className='nav' onClick={this.toggleNav}>
+                            <span className='top'></span>
+                            <span className='mid'></span>
+                            <span className='bot'></span>
+                        </span>
+                        <span className='nav-title'>DOCS</span>
+                        <ul>
+                            <li>
+                                <button id='react' onClick={this.handleLinkClick}
+                                >React<span className='link_underline' /></button>
+                            </li>
+                            <li>
+                                <button id='postres' onClick={this.handleLinkClick}
+                                >Postgres<span className='link_underline' /></button>
+                            </li>
+                        </ul>
+                    </nav>
 
-                        <Route exact path="/"
-                            render={props => <MainContainer content={'This is the HOME page'} />}
-                        />
-                        <Route path="/react"
-                            render={props => <MainContainer content={'This is the REACT page'} />}
-                        />
-                        <Route path="/mongo"
-                            render={props => <MainContainer content={'This is the MONGO page'} />}
-                        />
-                        <Route path="/postgres"
-                            render={props => <MainContainer content={'This is the POSTGRES page'} />}
-                        />
-                        <Route path="/mongoose"
-                            render={props => <MainContainer content={'This is the MONGOOSE page'} />}
-                        />
-                    </div>
-                </Router>
+                    <MainContainer docData={this.props.docData} />
+                </div>
             </div >
         )
     }
 }
 
-export default App;
+
+const mapStateToProps = ({ reducer }) => ({
+    docData: reducer.docData
+});
+
+const mapDispatchToProps = dispatch => ({
+    getDoc: (e) => dispatch(actions.getDoc(e.target.id)),
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
 
