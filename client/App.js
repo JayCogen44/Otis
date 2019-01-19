@@ -4,16 +4,16 @@ import MainContainer from './containers/MainContainer'
 import './css/App.css';
 
 class App extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        
+
         this.state = {
             showNav: false,
         }
     }
 
     toggleNav = () => {
-        if (this.state.showNav === false){
+        if (this.state.showNav === false) {
             this.setState({
                 showNav: true,
             })
@@ -29,7 +29,12 @@ class App extends Component {
             <div>
                 <Router>
                     <div>
-                        <nav className={this.state.showNav === false? "hide": "show"}>
+                        <nav className={`main-nav  ${this.state.showNav === false ? "hide" : "show"}`}>
+                            <span className='nav' onClick={this.toggleNav}>
+                                <span className='top'></span>
+                                <span className='mid'></span>
+                                <span className='bot'></span>
+                            </span>
                             <ul>
                                 <li>
                                     <Link to="/">Home</Link>
@@ -41,13 +46,13 @@ class App extends Component {
                         </nav>
 
                         <Route exact path="/"
-                            render={props => <MainContainer toggleNav={this.toggleNav} content={'This is the home page'} />}
+                            render={props => <MainContainer content={'This is the home page'} />}
                         />
                         <Route path="/about"
                             render={props => <MainContainer toggleNav={this.toggleNav} content={'This is the about page'} />} />
                     </div>
                 </Router>
-            </div>
+            </div >
         )
     }
 }

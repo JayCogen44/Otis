@@ -1,3 +1,4 @@
+/* GLOBAL */
 body {
     margin: 0;
 }
@@ -6,13 +7,92 @@ body {
     height: 100%;
 }
 
+/* GLOBAL NAV */
+
+nav {
+	position: fixed;
+	background: #eee;
+	height: 100%;
+	padding: 15px 20px;
+	width: 180px;
+}
+
 .show {
-    display: block;
+    left: 0;
 }
 
 .hide {
-    display: none;
+    left: -180px;
 }
+
+span.nav {
+	display: block;
+	width: 30px;
+	height: 12px;
+	padding-top: 10px;
+	padding-left: 20px;
+    position: absolute;
+    top: 15px;
+    left: 155px;
+	cursor: pointer;
+}
+
+.show span.nav {
+    left: 155px;
+}
+
+.hide span.nav {
+    left: 20px;
+}
+
+.nav span {
+	width: 30px;
+	height: 2px;
+	background: #3c3c3c;
+	display: block;
+	position: absolute;
+	opacity: 1;
+	transition: all .2s ease-in-out;
+}
+
+.show .nav .top {
+	top: 0;
+}
+
+.show .nav .mid {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.show .nav .bot {
+	top: 20px;
+}
+
+.hide .nav .top {
+	top: 15px;
+	transform: rotate(45deg);
+}
+
+.hide .nav .mid {
+	opacity: 0;
+}
+
+.hide .nav .bot {
+	top: 15px;
+	transform: rotate(-45deg);
+}
+
+nav ul {
+	margin-top: 50px;
+	list-style: none;
+}
+
+
+
+
+
+
+/* APP */
 
 .App {
     display: grid;
@@ -24,17 +104,22 @@ body {
     height: 100%;
 }
 
+/* HEADER */
+
 .Header {
     grid-area: a;
     background-color: black;
     color: whitesmoke;
 }
 
+/* DOCUMENT CONTENT */
+
 .DocContent {
     grid-area: c;
 }
 
-/* DOC NAV STYLING */
+/* DOCUMENT NAV */
+
 .DocNav {
     grid-area: b;
     border-style: solid;
