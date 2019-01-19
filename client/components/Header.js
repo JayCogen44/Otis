@@ -3,10 +3,15 @@ import React, { Component } from 'react';
 
 
 class Header extends Component {
-    
+    constructor(props){
+        super(props);
+    }
+
     render(){
         return(
-            <div className='Header'>Header is working.</div>
+            <div className='Header'>
+            <button onClick={this.props.toggleNav}>Header is working.</button>
+            </div>
         )
     }
 };

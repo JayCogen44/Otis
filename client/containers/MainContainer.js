@@ -21,7 +21,7 @@ class MainContainer extends Component {
     render() {
         return (
             <div className='App'>
-                <Header />
+                <Header toggleNav={this.props.toggleNav}/>
                 <DocContent showGreeting={this.props.showGreeting} greeting={this.props.greeting} content={this.props.content} />
                 <DocNav />
             </div>
@@ -31,10 +31,12 @@ class MainContainer extends Component {
 
 const mapStateToProps = ({ reducer }) => ({
     greeting: reducer.data,
+    // visibleNav: reducer.isPressed,
 });
 
 const mapDispatchToProps = dispatch => ({
-    showGreeting: () => dispatch(actions.showGreeting('Now we know redux'))
+    showGreeting: () => dispatch(actions.showGreeting('Now we know redux')),
+    // toggleHeader: () => dispatch(actions.toggleHeader())
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(MainContainer);
