@@ -230,3 +230,45 @@ nav ul li:hover .link_underline {
     /* margin-left: 5px; */
   }
   
+
+  /* SIGNUP FORM */
+
+  .signup-form {
+      width: 500px;
+      margin: 200px auto;
+      color: #444;
+  }
+
+  .signup-form h2 {
+	font-size: 36px;
+	margin-bottom: 40px;
+}
+
+.signup-form input {
+	width: 100%;
+	margin-bottom: 40px;
+	font-size: 18px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+.signup-form input:focus {
+    outline: none;
+}
+
+.signup-form button {
+    border: none;
+	color: #eee;
+	background: #81229b;
+	padding: 15px 30px;
+	font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.signup-form button:hover {
+    opacity: .8;
+    border-radius: 10px;
+}
