@@ -30,23 +30,18 @@ class SignUp extends Component {
   render() {
     return (
       <form
-        className="margin: auto; width: 50%; margin-top: 200;"
+        className="signup-form"
         onSubmit={this.handleSubmit}
         id="form"
       >
-        <div>
-          <label className="display: block;">Sign Up</label>
-        </div>
+        <h2>Otis Sign Up</h2>
 
-        <label>Name</label>
-        <input type="text" name="name" required />
-        <label>Email</label>
-        <input type="text" placeholder="Enter Email" name="email" required />
-        <label>Password</label>
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="text" placeholder="Email" name="email" required />
         <input
           type="password"
           name="password"
-          placeholder="Enter Password"
+          placeholder="Password"
           required
         />
         <button type="submit">Submit</button>
